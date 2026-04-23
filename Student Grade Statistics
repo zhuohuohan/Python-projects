@@ -1,0 +1,41 @@
+# 根据提供的学生成绩单，完成如下需求：
+# 1.计算每个学生的总分、各科平均分，然后一并输出出来。   
+# 2.统计各科成绩的最低分、最高分、平均分，并输出。
+# 3.查找成绩优秀（平均分大于90）的学生，并输出
+# 成绩表第一列到最后一列分别为学号 姓名 语文分数 数学分数 英语分数
+# ("01","小明",75,69,82)
+# ("02","小刚",86,89,98)
+# ("03","小红",66,59,72)
+
+
+# 1.计算每个学生的总分、各科平均分，然后一并输出出来。
+student = (
+("01","小明",75,69,82),
+("02","小刚",86,89,98),
+("03","小红",66,59,72)
+)
+
+print("学号\t\t","姓名\t","总分\t","平均分")
+for i in student:
+    total = i[2] + i[3] + i[4]
+    avg = total / 3
+    print(f"{i[0]}\t\t{i[1]}\t\t{total}\t\t{avg:.1f}")
+print()
+# 2. 统计各科成绩的最低分、最高分、平均分，并输出。
+chinese_score = [i[2] for i in student]
+math_score = [i[3] for i in student]
+english_score = [i[4] for i in student]
+
+print(f"语文最高分:{max(chinese_score) } 最低分:{min(chinese_score)} 平均分:{sum(chinese_score)/len(chinese_score):.1f}")
+print(f"数学最高分:{max(math_score) } 最低分:{min(math_score)} 平均分:{sum(math_score)/len(math_score):.1f}")
+print(f"英语最高分:{max(english_score) } 最低分:{min(english_score)} 平均分:{sum(english_score)/len(english_score):.1f}")
+print()
+#3.查找成绩优秀（平均分大于90）的学生，并输出
+
+print("学号\t\t","姓名\t","平均分")
+
+for i in student:
+    total = i[2] + i[3] + i[4]
+    avg = total / 3
+    if avg > 90:
+        print(f"{i[0]}\t\t{i[1]}\t\t{avg:.1f}")
