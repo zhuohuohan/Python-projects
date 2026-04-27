@@ -52,7 +52,7 @@ while True:
         case "4":
             # 4.查询购物车：展示所有商品信息，格式为：商品名称: xxx, 商品价格: xxx, 商品数量: xxx。
             for goods_name in shooping_cart.keys():
-                godds_info = shooping_car[goods_name]
+                godds_info = shooping_cart[goods_name]
                 print(f"商品名称:{goods_name},商品价格:{godds_info["price"]},商品数量:{godds_info["num"]}")
         case "5":
             print("bye")
